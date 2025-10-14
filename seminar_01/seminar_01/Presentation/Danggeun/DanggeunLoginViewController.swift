@@ -10,45 +10,47 @@ import UIKit
 class DanggeunLoginViewController: UIViewController {
     
     lazy var titleLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: 80, y: 163, width: 240, height: 60))
+        let label = UILabel(frame: CGRect(x: 86, y: 163, width: 240, height: 60))
         label.text = "동네라서 가능한 모든 것\n당근에서 가까운 이웃과 함께해요."
-        label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        label.font = .pretendardBold
         label.numberOfLines = 2
         label.textAlignment = .center
         return label
     }()
     
     lazy var idTextField: UITextField = {
-        let textField = UITextField(frame: CGRect(x: 30, y: 284, width: 335, height: 52))
+        let textField = UITextField(frame: CGRect(x: 36, y: 276, width: 335, height: 52))
         textField.placeholder = "아이디"
         textField.backgroundColor = UIColor.danggeunGray
         textField.layer.cornerRadius = 3
         // 텍스트 필드 좌우 패딩 추가
-        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 23, height: textField.frame.height))
         textField.leftViewMode = .always
         textField.rightViewMode = .never
         textField.returnKeyType = .done
         textField.textColor = .danggeunOrange
+        textField.font = .pretendardSemiBold
         return textField
     }()
     
     lazy var passwordTextField: UITextField = {
-        let textField = UITextField(frame: CGRect(x: 30, y: 343, width: 335, height: 52))
+        let textField = UITextField(frame: CGRect(x: 36, y: 335, width: 335, height: 52))
         textField.placeholder = "비밀번호"
         textField.backgroundColor = UIColor.danggeunGray
         textField.layer.cornerRadius = 3
         // 텍스트 필드 좌우 패딩 추가
-        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
+        textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 23, height: textField.frame.height))
         textField.leftViewMode = .always
         textField.rightViewMode = .never
         textField.isSecureTextEntry = true
         textField.clearButtonMode = .whileEditing
         textField.textColor = .danggeunOrange
+        textField.font = .pretendardSemiBold
         return textField
     }()
     
     private let loginButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: 30, y: 430, width: 335, height: 52))
+        let button = UIButton(frame: CGRect(x: 36, y: 422, width: 335, height: 57))
         button.setTitle("로그인하기", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 3
@@ -56,7 +58,7 @@ class DanggeunLoginViewController: UIViewController {
         button.layer.shadowOpacity = 0.3
         button.layer.shadowOffset = CGSize(width: 0, height: 3)
         button.layer.shadowRadius = 4
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        button.titleLabel?.font = .pretendardBold
         button.backgroundColor = UIColor.danggeunOrange
         button.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
         return button

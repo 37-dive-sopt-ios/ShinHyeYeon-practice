@@ -12,36 +12,39 @@ final class WelcomeViewController: UIViewController {
     var name: String?
     
     private let logoImageView: UIImageView = {
-        let imageView = UIImageView(frame: CGRect(x: 112, y: 87, width: 150, height: 150))
+        let imageView = UIImageView(frame: CGRect(x: 120, y: 87, width: 150, height: 150))
         imageView.image = UIImage(named: "logo2")
         return imageView
     }()
     
     private let welcomeLabel: UILabel = {
-        let label = UILabel(frame: CGRect(x: 100, y: 295, width: 170, height: 100))
+        let label = UILabel(frame: CGRect(x: 120, y: 248, width: 170, height: 100))
         label.text = "???님 \n반가워요!"
-        label.font = UIFont(name: "Pretendard-ExtraBold", size: 25)
+        label.font = .pretendardExtraBold
         label.textAlignment = .center
         label.numberOfLines = 2
         return label
     }()
     
     private var goHomeButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: 20, y: 426, width: 335, height: 58))
+        let button = UIButton(frame: CGRect(x: 36, y: 379, width: 335, height: 58))
         button.backgroundColor = UIColor(red: 255/255, green: 111/255, blue: 15/255, alpha: 1)
         button.setTitle("메인으로", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Pretendard-Bold", size: 18)
+        button.titleLabel?.font = .pretendardBold
+        button.layer.cornerRadius = 6
         button.addTarget(self, action: #selector(backToLoginButtonDidTap), for: .touchUpInside)
         return button
     }()
     
     private var backToLoginButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: 20, y: 498, width: 335, height: 58))
+        let button = UIButton(frame: CGRect(x: 36, y: 451, width: 335, height: 58))
         button.backgroundColor = UIColor(red: 221/255, green: 222/255, blue: 227/255, alpha: 1)
-        button.setTitle("로그인하기", for: .normal)
+        button.setTitle("다시 로그인", for: .normal)
         button.setTitleColor(UIColor(red: 172/255, green: 176/255, blue: 185/255, alpha: 1), for: .normal)
-        button.titleLabel?.font = UIFont(name: "Pretendard-Bold", size: 18)
+        button.titleLabel?.font = .pretendardBold
+        button.layer.cornerRadius = 6
+        button.addTarget(self, action: #selector(backToLoginButtonDidTap), for: .touchUpInside)
         return button
     }()
     
@@ -70,9 +73,8 @@ final class WelcomeViewController: UIViewController {
     }
     
     private func bindId() {
-        if let name = name {
-            self.welcomeLabel.text = "\(name)님 \n반가워요!"
-        }
+        guard let name = self.name else { return }
+        self.welcomeLabel.text = "\(name.isEmpty ? "혜연" : name)님 \n반가워요!"
     }
     
     // 메서드를 이용하는 방법
