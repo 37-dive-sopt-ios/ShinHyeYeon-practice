@@ -49,7 +49,7 @@ class DanggeunLoginViewController: UIViewController {
     }()
     
     private let loginButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: 36, y: 422, width: 335, height: 57))
+        let button = UIButton(frame: CGRect(x: 36, y: 442, width: 335, height: 57))
         button.setTitle("로그인하기", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 3
@@ -61,6 +61,24 @@ class DanggeunLoginViewController: UIViewController {
         button.backgroundColor = UIColor.danggeunOrange
         button.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
         return button
+    }()
+    
+    private let autoLoginSwitch: UISwitch = {
+        let switchView = UISwitch()
+        switchView.frame = CGRect(x: 36, y: 396, width: 200, height: 20)
+        switchView.thumbTintColor = .danggeunOrange
+        switchView.onTintColor = .darkGray
+        switchView.addTarget(self, action: #selector(autoLoginDidTap), for: .valueChanged)
+        return switchView
+    }()
+    
+    lazy var loginLabel: UILabel = {
+        let label = UILabel(frame: CGRect(x: 96, y: 382, width: 240, height: 60))
+        label.text = "자동로그인"
+        label.font = .pretendardRegular
+        label.textColor = .danggeunTextGray
+        label.textAlignment = .left
+        return label
     }()
     
     override func viewDidLoad() {
@@ -75,10 +93,21 @@ class DanggeunLoginViewController: UIViewController {
             titleLabel,
             idTextField,
             passwordTextField,
-            loginButton
+            loginButton,
+            autoLoginSwitch,
+            loginLabel
         ]
         
         components.forEach { view.addSubview($0) }
+    }
+    
+    @objc
+    private func autoLoginDidTap(_ sender: UISwitch) {
+        if sender.isOn {
+            loginLabel.textColor = .gray
+        } else {
+            loginLabel.textColor = .danggeunTextGray
+        }
     }
     
     @objc
