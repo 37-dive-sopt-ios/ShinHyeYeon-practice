@@ -26,8 +26,9 @@ class DanggeunLoginViewController: UIViewController {
         // 텍스트 필드 좌우 패딩 추가
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
         textField.leftViewMode = .always
-        textField.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
-        textField.rightViewMode = .always
+        textField.rightViewMode = .never
+        textField.returnKeyType = .done
+        textField.textColor = .danggeunOrange
         return textField
     }()
     
@@ -39,8 +40,10 @@ class DanggeunLoginViewController: UIViewController {
         // 텍스트 필드 좌우 패딩 추가
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
         textField.leftViewMode = .always
-        textField.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
-        textField.rightViewMode = .always
+        textField.rightViewMode = .never
+        textField.isSecureTextEntry = true
+        textField.clearButtonMode = .whileEditing
+        textField.textColor = .danggeunOrange
         return textField
     }()
     
@@ -49,6 +52,10 @@ class DanggeunLoginViewController: UIViewController {
         button.setTitle("로그인하기", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.layer.cornerRadius = 3
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOpacity = 0.3
+        button.layer.shadowOffset = CGSize(width: 0, height: 3)
+        button.layer.shadowRadius = 4
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         button.backgroundColor = UIColor.danggeunOrange
         button.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
