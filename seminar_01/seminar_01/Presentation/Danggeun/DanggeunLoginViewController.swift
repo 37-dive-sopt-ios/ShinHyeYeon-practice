@@ -27,7 +27,6 @@ class DanggeunLoginViewController: UIViewController {
         textField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 23, height: textField.frame.height))
         textField.leftViewMode = .always
         textField.rightViewMode = .never
-        textField.returnKeyType = .done
         textField.textColor = .danggeunOrange
         textField.font = .pretendardSemiBold
         return textField
@@ -90,6 +89,8 @@ class DanggeunLoginViewController: UIViewController {
     
     // 모달
     private func presentToWelcomeVC() {
+        self.view.endEditing(true)
+        
         let welcomeVC = WelcomeViewController()
 //        welcomeVC.modalPresentationStyle = .fullScreen
 //        welcomeVC.name = idTextField.text

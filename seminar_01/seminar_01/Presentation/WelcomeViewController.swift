@@ -28,20 +28,19 @@ final class WelcomeViewController: UIViewController {
     
     private var goHomeButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 36, y: 379, width: 335, height: 58))
-        button.backgroundColor = UIColor(red: 255/255, green: 111/255, blue: 15/255, alpha: 1)
+        button.backgroundColor = .danggeunOrange
         button.setTitle("메인으로", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .pretendardBold
         button.layer.cornerRadius = 6
-        button.addTarget(self, action: #selector(backToLoginButtonDidTap), for: .touchUpInside)
         return button
     }()
     
     private var backToLoginButton: UIButton = {
         let button = UIButton(frame: CGRect(x: 36, y: 451, width: 335, height: 58))
-        button.backgroundColor = UIColor(red: 221/255, green: 222/255, blue: 227/255, alpha: 1)
+        button.backgroundColor = UIColor.danggeunGray
         button.setTitle("다시 로그인", for: .normal)
-        button.setTitleColor(UIColor(red: 172/255, green: 176/255, blue: 185/255, alpha: 1), for: .normal)
+        button.setTitleColor(.danggeunTextGray, for: .normal)
         button.titleLabel?.font = .pretendardBold
         button.layer.cornerRadius = 6
         button.addTarget(self, action: #selector(backToLoginButtonDidTap), for: .touchUpInside)
