@@ -67,7 +67,6 @@ class LoginViewController: UIViewController {
         textField.leftViewMode = .always
         textField.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
         textField.rightViewMode = .always
-        textField.isSecureTextEntry = true
         return textField
     }()
     
