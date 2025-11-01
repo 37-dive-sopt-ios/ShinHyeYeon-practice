@@ -78,8 +78,7 @@ final class FeedCollectionViewCell: UICollectionViewCell {
         contentView.addSubviews(
             itemImageView,
             nameLabel,
-            priceLabel,
-            scrapButton
+            priceLabel
         )
         
         itemImageView.addSubview(scrapButton)
@@ -92,12 +91,6 @@ final class FeedCollectionViewCell: UICollectionViewCell {
             $0.height.equalTo(itemImageView.snp.width)
         }
         
-        scrapButton.snp.makeConstraints {
-            $0.trailing.equalTo(itemImageView).inset(8)
-            $0.bottom.equalTo(itemImageView).inset(8)
-            $0.size.equalTo(24)
-        }
-        
         nameLabel.snp.makeConstraints {
             $0.top.equalTo(itemImageView.snp.bottom).offset(3)
             $0.horizontalEdges.equalTo(itemImageView).inset(8)
@@ -108,10 +101,10 @@ final class FeedCollectionViewCell: UICollectionViewCell {
             $0.horizontalEdges.equalTo(itemImageView).inset(8)
         }
         
-//        scrapButton.snp.makeConstraints {
-//            $0.bottom.trailing.equalToSuperview().inset(10)
-//            $0.size.equalTo(16)
-//        }
+        scrapButton.snp.makeConstraints {
+            $0.bottom.trailing.equalToSuperview().inset(10)
+            $0.size.equalTo(16)
+        }
     }
     
     private func setAddTarget() {
@@ -126,7 +119,6 @@ final class FeedCollectionViewCell: UICollectionViewCell {
     }
     
     @objc private func scrapButtonTapped() {
-//        scrapButton.isSelected.toggle() // 재사용되면서 다시 해제됨
         delegate?.didTapScrapButton(self)
     }
 }
