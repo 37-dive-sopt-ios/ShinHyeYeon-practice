@@ -25,6 +25,11 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		2408D6112EB5C45E00A65F06 /* seminar_03 */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = seminar_03;
+			sourceTree = "<group>";
+		};
 		245A9E822E9B81A000DE799B /* seminar_01 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -50,6 +55,7 @@
 		245A9E772E9B81A000DE799B = {
 			isa = PBXGroup;
 			children = (
+				2408D6112EB5C45E00A65F06 /* seminar_03 */,
 				245A9E822E9B81A000DE799B /* seminar_01 */,
 				245A9E812E9B81A000DE799B /* Products */,
 			);
@@ -79,6 +85,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				2408D6112EB5C45E00A65F06 /* seminar_03 */,
 				245A9E822E9B81A000DE799B /* seminar_01 */,
 			);
 			name = seminar_01;
