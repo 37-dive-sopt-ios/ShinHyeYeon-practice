@@ -42,16 +42,6 @@ extension UserAPI: TargetType {
         }
     }
 
-    /// The HTTP method used in the request.
-//    var HTTPmethod: Method {
-//        switch self {
-//        case .register:
-//            return .post
-//        case .login:
-//            return .post
-//        }
-//    }
-
     /// The type of HTTP task to be performed.
     var task: HTTPTask {
         switch self {
