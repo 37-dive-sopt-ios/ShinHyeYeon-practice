@@ -38,6 +38,11 @@
 			path = seminar_01;
 			sourceTree = "<group>";
 		};
+		24F7DEBA2EBF0E770043D4E7 /* seminar_04 */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = seminar_04;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +60,7 @@
 		245A9E772E9B81A000DE799B = {
 			isa = PBXGroup;
 			children = (
+				24F7DEBA2EBF0E770043D4E7 /* seminar_04 */,
 				2408D6112EB5C45E00A65F06 /* seminar_03 */,
 				245A9E822E9B81A000DE799B /* seminar_01 */,
 				245A9E812E9B81A000DE799B /* Products */,
@@ -87,6 +93,7 @@
 			fileSystemSynchronizedGroups = (
 				2408D6112EB5C45E00A65F06 /* seminar_03 */,
 				245A9E822E9B81A000DE799B /* seminar_01 */,
+				24F7DEBA2EBF0E770043D4E7 /* seminar_04 */,
 			);
 			name = seminar_01;
 			packageProductDependencies = (
